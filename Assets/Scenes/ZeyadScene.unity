@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 435890271}
   - component: {fileID: 435890270}
   - component: {fileID: 435890269}
+  - component: {fileID: 435890273}
   m_Layer: 0
   m_Name: link2
   m_TagString: Untagged
@@ -446,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xAxis: 0
-  jointName: q1
+  jointName: base_link_link2_joint
   EffortLimit: 1000
   VelocityLimit: 1000
 --- !u!114 &435890270
@@ -462,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInertiaGizmo: 0
-  useUrdfData: 1
+  useUrdfData: 0
   centerOfMass: {x: -0.018770047, y: -0.0022436178, z: -0.0075901053}
   inertiaTensor: {x: 0.00004446439, y: 0.000057094054, z: 0.00006728674}
   inertiaTensorRotation: {x: 0.45505068, y: -0.8795326, z: -0.057555124, w: -0.12664405}
@@ -531,7 +532,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &435890272
 MonoBehaviour:
@@ -546,6 +547,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBaseLink: 0
+--- !u!114 &435890273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435890267}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ff7c1f08a0154bb12273e4a8c5686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &444716009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1679,7 +1692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xAxis: 0
-  jointName: q5
+  jointName: link5_endEffector_joint
   EffortLimit: 1000
   VelocityLimit: 1000
 --- !u!114 &493003681
@@ -1695,7 +1708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInertiaGizmo: 0
-  useUrdfData: 1
+  useUrdfData: 0
   centerOfMass: {x: -0.008519355, y: -0.052070573, z: 0.010835427}
   inertiaTensor: {x: 0.0000029115338, y: 0.000011580161, z: 0.000013062243}
   inertiaTensorRotation: {x: 0.47558644, y: -0.87687474, z: 0.03334787, w: 0.061612424}
@@ -1711,7 +1724,7 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 0.034918863
   m_ParentAnchorPosition: {x: -0.05583307, y: 0.00000000378824, z: 0.004999988}
-  m_ParentAnchorRotation: {x: -0.0000000914286, y: 0.000000041936154, z: -0.7071042,
+  m_ParentAnchorRotation: {x: -0.00000008538534, y: 0.0000000127529844, z: -0.7071042,
     w: 0.70710975}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.20277822, w: 0.97922474}
@@ -1765,7 +1778,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &493003683
 MonoBehaviour:
@@ -1850,7 +1863,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -1878,8 +1891,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677406454}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12552892, y: 0.04640651, z: -0.005885413, w: 0.9909866}
-  m_LocalPosition: {x: -0.3037936, y: 0.66907775, z: -1.2047911}
+  m_LocalRotation: {x: -0.0000000025611369, y: 1, z: -0.00000032782552, w: -0.000000015832482}
+  m_LocalPosition: {x: -0.038365573, y: 0.09491721, z: 0.29275697}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2307,7 +2320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xAxis: 0
-  jointName: q2
+  jointName: link2_link3_joint
   EffortLimit: 1000
   VelocityLimit: 1000
 --- !u!114 &692308864
@@ -2323,7 +2336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInertiaGizmo: 0
-  useUrdfData: 1
+  useUrdfData: 0
   centerOfMass: {x: -0.05928466, y: 0.005535002, z: -0.00012548173}
   inertiaTensor: {x: 0.000007277576, y: 0.00009417648, z: 0.0000969998}
   inertiaTensorRotation: {x: -0.00003524815, y: -0.70694643, z: -0.7072671, w: 0.000031534055}
@@ -2339,7 +2352,7 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 0.056510027
   m_ParentAnchorPosition: {x: -0.040395, y: -0.013891, z: 0}
-  m_ParentAnchorRotation: {x: 0.49999917, y: 0.50000095, z: -0.49999917, w: 0.50000095}
+  m_ParentAnchorRotation: {x: 0.49999914, y: 0.50000095, z: -0.49999917, w: 0.50000095}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -2392,7 +2405,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &692308866
 MonoBehaviour:
@@ -2459,7 +2472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xAxis: 0
-  jointName: q4
+  jointName: link4_link5_joint
   EffortLimit: 1000
   VelocityLimit: 1000
 --- !u!114 &711881038
@@ -2475,7 +2488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInertiaGizmo: 0
-  useUrdfData: 1
+  useUrdfData: 0
   centerOfMass: {x: -0.046098918, y: -0.0057851584, z: 0.0050597773}
   inertiaTensor: {x: 0.000002750232, y: 0.000004260197, z: 0.0000054905527}
   inertiaTensorRotation: {x: 0.083830826, y: -0.70204335, z: -0.7029872, w: 0.07691992}
@@ -2491,7 +2504,7 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 0.018154401
   m_ParentAnchorPosition: {x: -0.063767046, y: 0.013449006, z: -0.0051000197}
-  m_ParentAnchorRotation: {x: -0.00000011920868, y: -0.00000016858803, z: 2.842171e-13,
+  m_ParentAnchorRotation: {x: -0.00000011920877, y: -0.00000016858758, z: 5.684342e-14,
     w: 1.0000002}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2545,7 +2558,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &711881040
 MonoBehaviour:
@@ -3140,6 +3153,7 @@ GameObject:
   - component: {fileID: 976529336}
   - component: {fileID: 976529335}
   - component: {fileID: 976529334}
+  - component: {fileID: 976529337}
   m_Layer: 0
   m_Name: Arobot_urdf
   m_TagString: robot
@@ -3193,15 +3207,47 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976529333}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.0000005682481}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1867971328}
   - {fileID: 1942797091}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &976529337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976529333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c090eaaa853542969cc52590a778d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jointChain: []
+  currentAngles: []
+  endEffectorRotation: {x: 0, y: 0, z: 0, w: 0}
+  endEffectorPosition:
+    e00: 0
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 0
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 0
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 0
 --- !u!1 &1036605878
 GameObject:
   m_ObjectHideFlags: 8
@@ -3436,7 +3482,7 @@ Transform:
   m_GameObject: {fileID: 1080036329}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.16, z: 0}
+  m_LocalPosition: {x: 0, y: -0.043, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3696,6 +3742,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   geometryType: 3
+--- !u!1 &1216328810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1216328811}
+  - component: {fileID: 1216328812}
+  m_Layer: 0
+  m_Name: DistanceCalc
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1216328811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216328810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.38930884, y: 0.505841, z: -0.18774417}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1216328812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216328810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ece0f64784a6d498df2c718035d1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 435890268}
+  - {fileID: 692308862}
+  - {fileID: 2093850449}
+  - {fileID: 493003679}
 --- !u!1001 &1254186106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4925,7 +5020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInertiaGizmo: 0
-  useUrdfData: 1
+  useUrdfData: 0
   centerOfMass: {x: 0.017303446, y: -0.015782865, z: -0.01990238}
   inertiaTensor: {x: 0.00012453491, y: 0.00013055372, z: 0.00020058324}
   inertiaTensorRotation: {x: -0.49418795, y: 0.4953865, z: 0.5020217, w: 0.50827634}
@@ -4994,7 +5089,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &1942797094
 MonoBehaviour:
@@ -5682,7 +5777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xAxis: 0
-  jointName: q3
+  jointName: link3_link4_joint
   EffortLimit: 1000
   VelocityLimit: 1000
 --- !u!114 &2093850451
@@ -5698,7 +5793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   displayInertiaGizmo: 0
-  useUrdfData: 1
+  useUrdfData: 0
   centerOfMass: {x: -0.038096488, y: 0.013727723, z: -0.00003627702}
   inertiaTensor: {x: 0.000011018639, y: 0.0000636148, z: 0.000067127716}
   inertiaTensorRotation: {x: -0.0051283212, y: -0.70698076, z: -0.707184, w: -0.0065438007}
@@ -5714,7 +5809,7 @@ ArticulationBody:
   serializedVersion: 5
   m_Mass: 0.056939136
   m_ParentAnchorPosition: {x: -0.12, y: 5.684342e-14, z: -0.0000000065470545}
-  m_ParentAnchorRotation: {x: 0.4999992, y: 0.50000286, z: -0.4999974, w: -0.500001}
+  m_ParentAnchorRotation: {x: 0.49999923, y: 0.5000028, z: -0.49999744, w: -0.500001}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_MatchAnchors: 1
@@ -5767,7 +5862,7 @@ ArticulationBody:
   m_ImplicitCom: 0
   m_ImplicitTensor: 0
   m_Immovable: 0
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_CollisionDetectionMode: 0
 --- !u!114 &2093850453
 MonoBehaviour:
@@ -5790,3 +5885,4 @@ SceneRoots:
   - {fileID: 1101648242}
   - {fileID: 976529336}
   - {fileID: 1080036333}
+  - {fileID: 1216328811}

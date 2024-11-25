@@ -9,7 +9,7 @@ public class GetPosition : MonoBehaviour
         while (true)
         {
             Debug.Log(transform.position.ToString("F6"));
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(5);
         }
     }
 }
