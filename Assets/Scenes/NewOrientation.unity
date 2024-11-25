@@ -1171,6 +1171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 314343568}
   - component: {fileID: 314343567}
+  - component: {fileID: 314343569}
   - component: {fileID: 314343566}
   m_Layer: 0
   m_Name: Arobot_urdf
@@ -1227,13 +1228,29 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000021855695}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalScale: {x: 10, y: 10, z: 10}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 32304497}
   - {fileID: 885347874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &314343569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314343565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f28a457204d8b2439d07db1952d0a35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  q1: 90
+  q2: 45
+  q3: 30
+  joint_speed: 20
 --- !u!1 &325821583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1334,7 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 0.07229046
-  m_ParentAnchorPosition: {x: 0.017657, y: 0.017836, z: -0.019548}
+  m_ParentAnchorPosition: {x: 0.017657, y: 0.017836003, z: -0.019548}
   m_ParentAnchorRotation: {x: 0, y: 0, z: -0.7071081, w: 0.7071055}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1484,8 +1501,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368555211}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.01839186, y: 0.9815205, z: -0.1411217, w: -0.12792183}
-  m_LocalPosition: {x: 0.8048233, y: 0.48089272, z: 0.98820627}
+  m_LocalRotation: {x: 0.4252756, y: 0.22092718, z: -0.10786609, w: 0.87103206}
+  m_LocalPosition: {x: -0.95829886, y: 3.4189465, z: -2.3297832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3353,6 +3370,7 @@ GameObject:
   - component: {fileID: 1100165068}
   - component: {fileID: 1100165067}
   - component: {fileID: 1100165066}
+  - component: {fileID: 1100165070}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -3441,12 +3459,29 @@ Transform:
   m_GameObject: {fileID: 1100165065}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.155, z: 0}
+  m_LocalPosition: {x: 0, y: -0.442, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1100165070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100165065}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82ece0f64784a6d498df2c718035d1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - {fileID: 325821584}
+  - {fileID: 1181963990}
+  - {fileID: 471305660}
+  - {fileID: 111184845}
 --- !u!1 &1181963989
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,7 +4693,7 @@ ArticulationBody:
   m_Enabled: 1
   serializedVersion: 5
   m_Mass: 0.018154401
-  m_ParentAnchorPosition: {x: -0.063767, y: 0.013448985, z: -0.0051000193}
+  m_ParentAnchorPosition: {x: -0.063767, y: 0.013449, z: -0.0051000193}
   m_ParentAnchorRotation: {x: 0, y: -0.000000021073447, z: 0.000000021073447, w: 1}
   m_AnchorPosition: {x: 0, y: 0, z: 0}
   m_AnchorRotation: {x: 0, y: 0, z: 0, w: 1}
