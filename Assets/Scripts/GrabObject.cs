@@ -9,6 +9,6 @@ public class GrabObject : MonoBehaviour
        if (!other.gameObject.CompareTag("block")) return;
        
        Debug.Log("touch");
-       
+       other.transform.SetParent(transform);
    }
 }

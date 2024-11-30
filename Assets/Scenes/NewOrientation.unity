@@ -1234,6 +1234,621 @@ PrefabInstance:
       propertyPath: q3
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: AngleSequences.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.size
+      value: 123
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[1]
+      value: 0.00032046507
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[2]
+      value: 0.0012601339
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[3]
+      value: 0.0027864168
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[4]
+      value: 0.004866724
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[5]
+      value: 0.0074684657
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[6]
+      value: 0.010559053
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[7]
+      value: 0.0141058955
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[8]
+      value: 0.018076403
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[9]
+      value: 0.022437988
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[10]
+      value: 0.027158057
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[11]
+      value: 0.032204024
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[12]
+      value: 0.0375433
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[13]
+      value: 0.04314329
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[14]
+      value: 0.04897141
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[15]
+      value: 0.054995067
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[16]
+      value: 0.061181672
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[17]
+      value: 0.06749864
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[18]
+      value: 0.07391337
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[19]
+      value: 0.080393285
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[20]
+      value: 0.086905785
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[21]
+      value: 0.093418285
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[22]
+      value: 0.0998982
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[23]
+      value: 0.10631293
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[24]
+      value: 0.1126299
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[25]
+      value: 0.1188165
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[26]
+      value: 0.12484016
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[27]
+      value: 0.13066828
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[28]
+      value: 0.13626827
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[29]
+      value: 0.14160754
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[30]
+      value: 0.14665352
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[31]
+      value: 0.15137358
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[32]
+      value: 0.15573516
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[33]
+      value: 0.15970567
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[34]
+      value: 0.16325252
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[35]
+      value: 0.16634311
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[36]
+      value: 0.16894485
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[37]
+      value: 0.17102516
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[38]
+      value: 0.17255144
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[39]
+      value: 0.1734911
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[40]
+      value: 0.17381157
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[42]
+      value: 0.09985663
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[43]
+      value: 0.39265656
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[44]
+      value: 0.86824495
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[45]
+      value: 1.5164667
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[46]
+      value: 2.3271673
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[47]
+      value: 3.2901914
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[48]
+      value: 4.3953843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[49]
+      value: 5.632591
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[50]
+      value: 6.9916563
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[51]
+      value: 8.462426
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[52]
+      value: 10.034745
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[53]
+      value: 11.698458
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[54]
+      value: 13.44341
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[55]
+      value: 15.259447
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[56]
+      value: 17.136414
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[57]
+      value: 19.064154
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[58]
+      value: 21.032515
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[59]
+      value: 23.03134
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[60]
+      value: 25.050474
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[61]
+      value: 27.079763
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[62]
+      value: 29.109053
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[63]
+      value: 31.12819
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[64]
+      value: 33.127014
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[65]
+      value: 35.095375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[66]
+      value: 37.023113
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[67]
+      value: 38.90008
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[68]
+      value: 40.716118
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[69]
+      value: 42.46107
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[70]
+      value: 44.124783
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[71]
+      value: 45.6971
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[72]
+      value: 47.16787
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[73]
+      value: 48.526936
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[74]
+      value: 49.764145
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[75]
+      value: 50.869335
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[76]
+      value: 51.83236
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[77]
+      value: 52.643063
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[78]
+      value: 53.291283
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[79]
+      value: 53.766872
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[80]
+      value: 54.05967
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[81]
+      value: 54.159527
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[83]
+      value: -0.0069435523
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[84]
+      value: -0.027303461
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[85]
+      value: -0.0603736
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[86]
+      value: -0.10544784
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[87]
+      value: -0.16182007
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[88]
+      value: -0.22878416
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[89]
+      value: -0.305634
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[90]
+      value: -0.39166343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[91]
+      value: -0.48616636
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[92]
+      value: -0.58843666
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[93]
+      value: -0.69776815
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[94]
+      value: -0.8134548
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[95]
+      value: -0.93479043
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[96]
+      value: -1.0610689
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[97]
+      value: -1.1915842
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[98]
+      value: -1.3256301
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[99]
+      value: -1.4625005
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[100]
+      value: -1.6014892
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[101]
+      value: -1.7418902
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[102]
+      value: -1.8829973
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[103]
+      value: -2.0241044
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[104]
+      value: -2.1645052
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[105]
+      value: -2.303494
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[106]
+      value: -2.4403644
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[107]
+      value: -2.5744102
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[108]
+      value: -2.7049255
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[109]
+      value: -2.831204
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[110]
+      value: -2.9525397
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[111]
+      value: -3.0682263
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[112]
+      value: -3.177558
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[113]
+      value: -3.279828
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[114]
+      value: -3.374331
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[115]
+      value: -3.4603605
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[116]
+      value: -3.5372102
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[117]
+      value: -3.6041744
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[118]
+      value: -3.6605465
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[119]
+      value: -3.705621
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[120]
+      value: -3.738691
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[121]
+      value: -3.7590508
+      objectReference: {fileID: 0}
+    - target: {fileID: 6289104905157836475, guid: 7537bdce8b468dd4486cd68408718e01,
+        type: 3}
+      propertyPath: angleSequences.Array.data[0].angles.Array.data[122]
+      value: -3.7659945
+      objectReference: {fileID: 0}
     - target: {fileID: 7622226599658673497, guid: 7537bdce8b468dd4486cd68408718e01,
         type: 3}
       propertyPath: m_LocalPosition.x

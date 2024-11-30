@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Robotics.UrdfImporter.Control;
 using UnityEngine;
+using UnityEngine.Serialization;
+
+// [System.Serializable]
+// public class AngleSequence
+// {
+//     public float[] angles;
+// }
 
 public class movejoint : MonoBehaviour
 {
@@ -9,13 +16,18 @@ public class movejoint : MonoBehaviour
     [SerializeField] float q2 = 0;
     [SerializeField] float q3 = 0;
     [SerializeField] float joint_speed = 10;
+
+    // [SerializeField] public List<AngleSequence> AngleSequences;
+
     private ArticulationBody[] articulationChain;
+
     // Start is called before the first frame update
     void Start()
     {
         this.gameObject.AddComponent<FKRobot>();
         articulationChain = this.GetComponentsInChildren<ArticulationBody>();
     }
+
     public IEnumerator MoveJointToAngle(int jointIndex, float targetAngle, float speed)
     {
         if (jointIndex < 0 || jointIndex >= articulationChain.Length)
@@ -24,11 +36,11 @@ public class movejoint : MonoBehaviour
             yield break;
         }
 
-        ArticulationBody joint = articulationChain[jointIndex];
-        ArticulationDrive drive = joint.xDrive;
+        var joint = articulationChain[jointIndex];
+        var drive = joint.xDrive;
 
-        float currentAngle = drive.target; // Start from the current target angle
-        float step = speed * Time.deltaTime; // Increment based on speed and delta time
+        var currentAngle = drive.target; // Start from the current target angle
+        var step = speed * Time.deltaTime; // Increment based on speed and delta time
 
         while (Mathf.Abs(currentAngle - targetAngle) > 0.1f)
         {
@@ -42,6 +54,7 @@ public class movejoint : MonoBehaviour
         drive.target = targetAngle; // Ensure the final target is set precisely
         joint.xDrive = drive;
     }
+
     public IEnumerator MoveThroughJointAngleSequences(float[][] angleSequences, float speed)
     {
         // Validate the input
@@ -51,18 +64,16 @@ public class movejoint : MonoBehaviour
             yield break;
         }
 
-        int maxSteps = Mathf.Max(angleSequences[0].Length, angleSequences[1].Length, angleSequences[2].Length);
+        var maxSteps = Mathf.Max(angleSequences[0].Length, angleSequences[1].Length, angleSequences[2].Length);
 
-        for (int step = 0; step < maxSteps; step++)
+        for (var step = 0; step < maxSteps; step++)
         {
-            for (int jointIndex = 0; jointIndex < angleSequences.Length; jointIndex++)
+            for (var jointIndex = 0; jointIndex < angleSequences.Length; jointIndex++)
             {
                 // Check if the current step exists for the current joint
-                if (step < angleSequences[jointIndex].Length)
-                {
-                    float targetAngle = angleSequences[jointIndex][step];
-                    StartCoroutine(MoveJointToAngle(jointIndex + 1, targetAngle, speed));
-                }
+                if (step >= angleSequences[jointIndex].Length) continue;
+                var targetAngle = angleSequences[jointIndex][step];
+                StartCoroutine(MoveJointToAngle(jointIndex + 1, targetAngle, speed));
             }
 
             // Wait for all joints to finish moving to this step
@@ -72,52 +83,170 @@ public class movejoint : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             StartCoroutine(MoveJointToAngle(1, q1, joint_speed));
             StartCoroutine(MoveJointToAngle(2, q2, joint_speed));
             StartCoroutine(MoveJointToAngle(3, q3, joint_speed));
         }
 
-        if (Input.GetKeyDown("t")) // Example key to test the sequence
+        if (Input.GetKeyDown(KeyCode.T)) // Example key to test the sequence
         {
             float[][] angleSequences = new float[][]
             {
-                new float[] { 0.00000000e+00f,  3.20465081e-04f,  1.26013388e-03f,  2.78641672e-03f,
-   4.86672395e-03f,  7.46846588e-03f,  1.05590529e-02f,  1.41058952e-02f,
-   1.80764032e-02f,  2.24379873e-02f,  2.71580577e-02f,  3.22040249e-02f,
-   3.75432990e-02f,  4.31432905e-02f,  4.89714097e-02f,  5.49950669e-02f,
-   6.11816725e-02f,  6.74986367e-02f,  7.39133700e-02f,  8.03932825e-02f,
-   8.69057848e-02f,  9.34182870e-02f,  9.98981996e-02f,  1.06312933e-01f,
-   1.12629897e-01f,  1.18816503e-01f,  1.24840160e-01f,  1.30668279e-01f,
-   1.36268271e-01f,  1.41607545e-01f,  1.46653512e-01f,  1.51373582e-01f,
-   1.55735166e-01f,  1.59705674e-01f,  1.63252517e-01f,  1.66343104e-01f,
-   1.68944846e-01f,  1.71025153e-01f,  1.72551436e-01f,  1.73491104e-01f,
-   1.73811570e-01f}, // Angles for q1
-                new float[] {
-    0.00000000e+00f, 9.98566289e-02f, 3.92656575e-01f, 8.68244926e-01f,
-    1.51646677e+00f, 2.32716720e+00f, 3.29019130e+00f, 4.39538416e+00f,
-    5.63259086e+00f, 6.99165651e+00f, 8.46242618e+00f, 1.00347450e+01f,
-    1.16984579e+01f, 1.34434102e+01f, 1.52594469e+01f, 1.71364130e+01f,
-    1.90641537e+01f, 2.10325140e+01f, 2.30313391e+01f, 2.50504740e+01f,
-    2.70797638e+01f, 2.91090536e+01f, 3.11281884e+01f, 3.31270135e+01f,
-    3.50953738e+01f, 3.70231145e+01f, 3.89000807e+01f, 4.07161173e+01f,
-    4.24610696e+01f, 4.41247826e+01f, 4.56971014e+01f, 4.71678710e+01f,
-    4.85269367e+01f, 4.97641434e+01f, 5.08693362e+01f, 5.18323603e+01f,
-    5.26430608e+01f, 5.32912826e+01f, 5.37668710e+01f, 5.40596709e+01f,
-    5.41595275e+01f
-}, // Angles for q2
-                new float[] {    0.00000000e+00f, -6.94355236e-03f, -2.73034601e-02f, -6.03735994e-02f,
-    -1.05447846e-01f, -1.61820076e-01f, -2.28784166e-01f, -3.05633991e-01f,
-    -3.91663428e-01f, -4.86166353e-01f, -5.88436641e-01f, -6.97768169e-01f,
-    -8.13454812e-01f, -9.34790448e-01f, -1.06106895e+00f, -1.19158420e+00f,
-    -1.32563006e+00f, -1.46250043e+00f, -1.60148916e+00f, -1.74189014e+00f,
-    -1.88299725e+00f, -2.02410436e+00f, -2.16450534e+00f, -2.30349407e+00f,
-    -2.44036444e+00f, -2.57441030e+00f, -2.70492555e+00f, -2.83120405e+00f,
-    -2.95253969e+00f, -3.06822633e+00f, -3.17755786e+00f, -3.27982815e+00f,
-    -3.37433107e+00f, -3.46036051e+00f, -3.53721034e+00f, -3.60417443e+00f,
-    -3.66054666e+00f, -3.70562090e+00f, -3.73869104e+00f, -3.75905095e+00f,
-    -3.76599450e+00f} // Angles for q3
+                new float[]
+                {
+                    0.0f, 0.16629248f, 0.65389587f, 1.44589906f, 2.52539095f, 3.87546045f,
+                    5.47919644f, 7.31968784f, 9.38002354f, 11.64329244f, 14.09258345f,
+                    16.71098545f, 19.48158736f, 22.38747806f, 25.41174647f, 28.53748148f,
+                    31.74777199f, 35.0257069f, 38.35437511f, 41.71686552f, 45.09626703f,
+                    48.47566854f, 51.83815895f, 55.16682716f, 58.44476207f, 61.65505257f,
+                    64.78078758f, 67.80505599f, 70.7109467f, 73.4815486f, 76.09995061f,
+                    78.54924161f, 80.81251051f, 82.87284621f, 84.71333761f, 86.3170736f,
+                    87.6671431f, 88.74663499f, 89.53863818f, 90.02624157f, 90.19253405f
+                }, // Angles for q1
+
+                new float[]
+                {
+                    0.0f, 0.16634501f, 0.65410241f, 1.44635577f, 2.52618863f, 3.87668456f,
+                    5.48092712f, 7.32199987f, 9.38298635f, 11.64697014f, 14.09703478f,
+                    16.71626384f, 19.48774088f, 22.39454945f, 25.41977312f, 28.54649543f,
+                    31.75779995f, 35.03677024f, 38.36648986f, 41.73004236f, 45.1105113f,
+                    48.49098024f, 51.85453274f, 55.18425235f, 58.46322264f, 61.67452717f,
+                    64.80124948f, 67.82647314f, 70.73328172f, 73.50475875f, 76.12398782f,
+                    78.57405246f, 80.83803625f, 82.89902273f, 84.74009547f, 86.34433803f,
+                    87.69483396f, 88.77466683f, 89.56692018f, 90.05467759f, 90.2210226f
+                },
+                new float[]
+                {
+                    0.0f, 0.16608764f, 0.65309039f, 1.44411798f, 2.52228013f, 3.87068659f,
+                    5.47244707f, 7.31067132f, 9.36846906f, 11.62895002f, 14.07522395f,
+                    16.69040055f, 19.45758958f, 22.35990076f, 25.38044382f, 28.50232849f,
+                    31.7086645f, 34.98256159f, 38.30712949f, 41.66547792f, 45.04071663f,
+                    48.41595533f, 51.77430376f, 55.09887166f, 58.37276875f, 61.57910476f,
+                    64.70098943f, 67.72153249f, 70.62384367f, 73.3910327f, 76.00620931f,
+                    78.45248323f, 80.71296419f, 82.77076193f, 84.60898618f, 86.21074667f,
+                    87.55915312f, 88.63731527f, 89.42834286f, 89.91534561f, 90.08143325f
+                }
+            };
+
+            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, joint_speed));
+        }
+
+        if (Input.GetKeyDown(KeyCode.Y)) // Example key to test the sequence
+        {
+            float[][] angleSequences = new float[][]
+            {
+                new float[]
+                {
+                    90.19253405f, 90.02631506f, 89.55858256f, 88.83572324f, 87.90412379f,
+                    86.81017091f, 85.60025129f, 84.32075163f, 83.01805862f, 81.73855897f,
+                    80.52863935f, 79.43468647f, 78.50308702f, 77.7802277f, 77.31249519f,
+                    77.1462762f
+                }, // Angles for q1
+
+                new float[]
+                {
+                    90.2210226f, 89.81463636f, 88.67108439f, 86.90377679f, 84.62612369f,
+                    81.95153519f, 78.99342141f, 75.86519246f, 72.68025846f, 69.55202951f,
+                    66.59391573f, 63.91932723f, 61.64167413f, 59.87436653f, 58.73081456f,
+                    58.32442832f
+                },
+                new float[]
+                {
+                    90.08143325f, 90.08292943f, 90.08713959f, 90.09364621f, 90.10203175f,
+                    90.11187867f, 90.12276943f, 90.1342865f, 90.14601233f, 90.1575294f,
+                    90.16842016f, 90.17826708f, 90.18665262f, 90.19315924f, 90.1973694f,
+                    90.19886558f
+                }
+            };
+
+            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, joint_speed));
+        }
+         if (Input.GetKeyDown(KeyCode.U)) // Example key to test the sequence
+        {
+            float[][] angleSequences = new float[][]
+            {
+                new float[]
+                {
+                    77.1462762f, 77.31249519f, 77.7802277f, 78.50308702f, 79.43468647f,
+                    80.52863935f, 81.73855897f, 83.01805862f, 84.32075163f, 85.60025129f,
+                    86.81017091f, 87.90412379f, 88.83572324f, 89.55858256f, 90.02631506f,
+                    90.19253405f
+                }, // Angles for q1
+
+                new float[]
+                {
+                    58.32442832f, 58.73081456f, 59.87436653f, 61.64167413f, 63.91932723f,
+                    66.59391573f, 69.55202951f, 72.68025846f, 75.86519246f, 78.99342141f,
+                    81.95153519f, 84.62612369f, 86.90377679f, 88.67108439f, 89.81463636f,
+                    90.2210226f
+                },
+                new float[]
+                {
+                    90.19886558f, 90.1973694f, 90.19315924f, 90.18665262f, 90.17826708f,
+                    90.16842016f, 90.1575294f, 90.14601233f, 90.1342865f, 90.12276943f,
+                    90.11187867f, 90.10203175f, 90.09364621f, 90.08713959f, 90.08292943f,
+                    90.08143325f
+                }
+            };
+
+            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, joint_speed));
+        }
+
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            float[][] angleSequences = new float[][]
+            {
+                new float[]
+                {
+                    90.19253405f, 90.04413902f, 89.60562335f, 88.88699122f, 87.89824678f,
+                    86.64939419f, 85.15043761f, 83.41138119f, 81.44222911f, 79.25298551f,
+                    76.85365457f, 74.25424043f, 71.46474726f, 68.49517921f, 65.35554045f,
+                    62.05583514f, 58.60606743f, 55.01624149f, 51.29636148f, 47.45643154f,
+                    43.50645586f, 39.45643857f, 35.31638385f, 31.09629586f, 26.80617874f,
+                    22.45603667f, 18.0558738f, 13.61569429f, 9.1455023f, 4.655302f,
+                    0.15509753f, -4.34510693f, -8.83530724f, -13.30549923f, -17.74567874f,
+                    -22.14584161f, -26.49598368f, -30.78610079f, -35.00618879f, -39.14624351f,
+                    -43.19626079f, -47.14623648f, -50.98616641f, -54.70604643f, -58.29587237f,
+                    -61.74564008f, -65.04534539f, -68.18498415f, -71.15455219f, -73.94404537f,
+                    -76.54345951f, -78.94279045f, -81.13203405f, -83.10118613f, -84.84024254f,
+                    -86.33919913f, -87.58805172f, -88.57679616f, -89.29542829f, -89.73394396f,
+                    -89.88233899f
+                }, // Angles for q1
+
+                new float[]
+                {
+                    90.2210226f, 90.18402479f, 90.07469419f, 89.89552503f, 89.64901155f,
+                    89.33764798f, 88.96392856f, 88.53034751f, 88.03939908f, 87.4935775f,
+                    86.89537699f, 86.24729181f, 85.55181617f, 84.81144432f, 84.02867048f,
+                    83.2059889f, 82.34589381f, 81.45087943f, 80.52344002f, 79.56606979f,
+                    78.58126298f, 77.57151384f, 76.53931658f, 75.48716546f, 74.41755469f,
+                    73.33297852f, 72.23593117f, 71.12890689f, 70.01439991f, 68.89490446f,
+                    67.77291477f, 66.65092509f, 65.53142964f, 64.41692265f, 63.30989837f,
+                    62.21285103f, 61.12827486f, 60.05866409f, 59.00651296f, 57.97431571f,
+                    56.96456656f, 55.97975976f, 55.02238953f, 54.09495011f, 53.19993574f,
+                    52.33984065f, 51.51715906f, 50.73438523f, 49.99401338f, 49.29853774f,
+                    48.65045255f, 48.05225205f, 47.50643047f, 47.01548203f, 46.58190099f,
+                    46.20818156f, 45.89681799f, 45.65030451f, 45.47113536f, 45.36180476f,
+                    45.32480695f
+                },
+                new float[]
+                {
+                    90.08143325f, 90.04462365f, 89.93584919f, 89.75759143f, 89.51233192f,
+                    89.2025522f, 88.83073382f, 88.39935832f, 87.91090725f, 87.36786216f,
+                    86.77270459f, 86.12791609f, 85.43597821f, 84.69937249f, 83.92058048f,
+                    83.10208373f, 82.24636378f, 81.35590217f, 80.43318047f, 79.4806802f,
+                    78.50088293f, 77.49627019f, 76.46932353f, 75.4225245f, 74.35835464f,
+                    73.27929551f, 72.18782864f, 71.08643558f, 69.97759789f, 68.8637971f,
+                    67.74751477f, 66.63123244f, 65.51743165f, 64.40859396f, 63.3072009f,
+                    62.21573404f, 61.1366749f, 60.07250504f, 59.02570601f, 57.99875935f,
+                    56.99414661f, 56.01434934f, 55.06184907f, 54.13912737f, 53.24866577f,
+                    52.39294582f, 51.57444906f, 50.79565705f, 50.05905133f, 49.36711345f,
+                    48.72232495f, 48.12716739f, 47.58412229f, 47.09567123f, 46.66429573f,
+                    46.29247734f, 45.98269762f, 45.73743811f, 45.55918035f, 45.4504059f,
+                    45.41359629f
+                }
             };
 
             StartCoroutine(MoveThroughJointAngleSequences(angleSequences, joint_speed));
