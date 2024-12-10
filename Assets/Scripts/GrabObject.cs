@@ -6,9 +6,11 @@ public class GrabObject : MonoBehaviour
 {
    private void OnTriggerEnter(Collider other)
    {
-       if (!other.gameObject.CompareTag("block")) return;
-       
-       Debug.Log("touch");
-       other.transform.SetParent(transform);
+       // if (!other.gameObject.CompareTag("block")) return;
+       //
+       // Debug.Log("touch");
+       // other.transform.SetParent(transform);
+       // other.transform.localPosition = Vector3.zero;
+       // other.transform.position = transform.position;
    }
 }

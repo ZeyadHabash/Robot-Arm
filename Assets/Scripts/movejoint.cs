@@ -16,6 +16,7 @@ public class movejoint : MonoBehaviour
     [SerializeField] float q2 = 0;
     [SerializeField] float q3 = 0;
     [SerializeField] float joint_speed = 10;
+    [SerializeField] private float time = 1;
 
     // [SerializeField] public List<AngleSequence> AngleSequences;
 
@@ -55,7 +56,67 @@ public class movejoint : MonoBehaviour
         joint.xDrive = drive;
     }
 
-    public IEnumerator MoveThroughJointAngleSequences(float[][] angleSequences, float speed)
+    public IEnumerator MoveJointToAngleInTime(int jointIndex, float targetAngle, float totalTime)
+    {
+        if (jointIndex < 0 || jointIndex >= articulationChain.Length)
+        {
+            yield break;
+        }
+
+        var joint = articulationChain[jointIndex];
+        var drive = joint.xDrive;
+
+        var currentAngle = drive.target; // Start from the current target angle
+        var angleDifference = Mathf.Abs(targetAngle - currentAngle);
+        var speed = angleDifference / totalTime; // Calculate the speed required to reach the target in the given time
+
+        var elapsedTime = 0f;
+
+
+        while (elapsedTime < totalTime)
+        {
+            currentAngle =
+                Mathf.MoveTowards(currentAngle, targetAngle, speed * Time.deltaTime); // Gradually move to the target
+            drive.target = currentAngle;
+            joint.xDrive = drive;
+
+            elapsedTime += Time.deltaTime;
+
+            yield return null; // Wait for the next frame
+        }
+
+        drive.target = targetAngle; // Ensure the final target is set precisely
+        joint.xDrive = drive;
+
+    }
+
+    // public IEnumerator MoveThroughJointAngleSequences(float[][] angleSequences, float speed)
+    // {
+    //     // Validate the input
+    //     if (angleSequences.Length != 3)
+    //     {
+    //         Debug.LogError("The angleSequences array must contain exactly 3 subarrays, one for each joint.");
+    //         yield break;
+    //     }
+    //
+    //     var maxSteps = Mathf.Max(angleSequences[0].Length, angleSequences[1].Length, angleSequences[2].Length);
+    //
+    //     for (var step = 0; step < maxSteps; step++)
+    //     {
+    //         for (var jointIndex = 0; jointIndex < angleSequences.Length; jointIndex++)
+    //         {
+    //             // Check if the current step exists for the current joint
+    //             if (step >= angleSequences[jointIndex].Length) continue;
+    //             var targetAngle = angleSequences[jointIndex][step];
+    //             StartCoroutine(MoveJointToAngle(jointIndex + 1, targetAngle, speed));
+    //         }
+    //
+    //         // Wait for all joints to finish moving to this step
+    //         yield return new WaitForSeconds(1.0f / speed); // Adjust duration as needed
+    //     }
+    // }
+
+    public IEnumerator MoveThroughJointAngleSequences(float[][] angleSequences, float totalTime)
     {
         // Validate the input
         if (angleSequences.Length != 3)
@@ -66,6 +127,7 @@ public class movejoint : MonoBehaviour
 
         var maxSteps = Mathf.Max(angleSequences[0].Length, angleSequences[1].Length, angleSequences[2].Length);
 
+        var timePerStep = totalTime / maxSteps;
         for (var step = 0; step < maxSteps; step++)
         {
             for (var jointIndex = 0; jointIndex < angleSequences.Length; jointIndex++)
@@ -73,11 +135,10 @@ public class movejoint : MonoBehaviour
                 // Check if the current step exists for the current joint
                 if (step >= angleSequences[jointIndex].Length) continue;
                 var targetAngle = angleSequences[jointIndex][step];
-                StartCoroutine(MoveJointToAngle(jointIndex + 1, targetAngle, speed));
+                StartCoroutine(MoveJointToAngleInTime(jointIndex + 1, targetAngle, timePerStep));
             }
-
             // Wait for all joints to finish moving to this step
-            yield return new WaitForSeconds(1.0f / speed); // Adjust duration as needed
+            yield return new WaitForSeconds(timePerStep); // Adjust duration as needed
         }
     }
 
@@ -88,6 +149,13 @@ public class movejoint : MonoBehaviour
             StartCoroutine(MoveJointToAngle(1, q1, joint_speed));
             StartCoroutine(MoveJointToAngle(2, q2, joint_speed));
             StartCoroutine(MoveJointToAngle(3, q3, joint_speed));
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            StartCoroutine(MoveJointToAngleInTime(1, q1, time));
+            StartCoroutine(MoveJointToAngleInTime(2, q2, time));
+            StartCoroutine(MoveJointToAngleInTime(3, q3, time));
         }
 
         if (Input.GetKeyDown(KeyCode.T)) // Example key to test the sequence
@@ -130,7 +198,7 @@ public class movejoint : MonoBehaviour
                 }
             };
 
-            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, joint_speed));
+            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, 4));
         }
 
         if (Input.GetKeyDown(KeyCode.Y)) // Example key to test the sequence
@@ -161,9 +229,10 @@ public class movejoint : MonoBehaviour
                 }
             };
 
-            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, joint_speed));
+            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, 1.5f));
         }
-         if (Input.GetKeyDown(KeyCode.U)) // Example key to test the sequence
+
+        if (Input.GetKeyDown(KeyCode.U)) // Example key to test the sequence
         {
             float[][] angleSequences = new float[][]
             {
@@ -191,7 +260,7 @@ public class movejoint : MonoBehaviour
                 }
             };
 
-            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, joint_speed));
+            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, 1.5f));
         }
 
         if (Input.GetKeyDown(KeyCode.I))
@@ -249,7 +318,41 @@ public class movejoint : MonoBehaviour
                 }
             };
 
-            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, joint_speed));
+            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, 6));
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            float[][] angleSequences = new float[][]
+            {
+                new float[]
+                {
+                    -89.882339f, -89.23069f, -87.36563f, -84.42199f, -80.534576f,
+                    -75.83822f, -70.46775f, -64.55799f, -58.243755f, -51.659874f,
+                    -44.94117f, -38.22246f, -31.638582f, -25.32435f, -19.414585f,
+                    -14.044115f, -9.347763f, -5.460352f, -2.516705f, -0.651647f,
+                    0.0f
+                }, // Angles for q1
+
+                new float[]
+                {
+                    45.324806f, 44.9962f, 44.05571f, 42.571327f, 40.611027f,
+                    38.242805f, 35.53465f, 32.554543f, 29.370476f, 26.050432f,
+                    22.662403f, 19.274374f, 15.954332f, 12.770264f, 9.790158f,
+                    7.082001f, 4.71378f, 2.753482f, 1.269094f, 0.328604f,
+                    0.0f
+                },
+                new float[]
+                {
+                    45.413597f, 45.084347f, 44.142014f, 42.65472f, 40.690582f,
+                    38.317722f, 35.60426f, 32.618317f, 29.42801f, 26.101465f,
+                    22.706797f, 19.312132f, 15.985586f, 12.795281f, 9.809337f,
+                    7.095874f, 4.723014f, 2.758876f, 1.271581f, 0.329249f,
+                    0.0f
+                }
+            };
+
+            StartCoroutine(MoveThroughJointAngleSequences(angleSequences, 2));
         }
     }
 }
